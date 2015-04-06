@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <!--    <bean name="orderRepository" class="ua.yandex.pizza.repository.TestOrderRepositoryImpl"/>-->
+    <bean name="pizzaRepository" class="ua.yandex.pizza.repository.TestPizzaRepositoryImpl">
+
+        <property name="pizzas">
+            <list>
+                <bean class="ua.yandex.pizza.domain.Pizza" scope="prototype">
+                    <property name="name" value="MY_smallPizza"/>
+                    <property name="price" value="10"/>
+                    <property name="type" value="SMALL"/>
+                </bean>
+                <bean class="ua.yandex.pizza.domain.Pizza" scope="prototype">
+                    <property name="name" value="MY_mediumPizza"/>
+                    <property name="price" value="10"/>
+                    <property name="type" value="MEDIUM"/>
+                </bean>
+                <bean class="ua.yandex.pizza.domain.Pizza" scope="prototype">
+                    <property name="name" value="MY_bigPizza"/>
+                    <property name="price" value="10"/>
+                    <property name="type" value="BIG"/>
+                </bean>
+            </list>
+        </property>
+    </bean>
+    <context:component-scan base-package="ua.yandex.pizza.repository"/>
+</beans>

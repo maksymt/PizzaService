@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <!--   <bean name="orderService" class="ua.yandex.pizza.service.SimpleOrderService">
+           <lookup-method name="createEmptyOrder" bean="order"/>
+           <property name="orderRepository" ref="orderRepository"/>
+       </bean>
+       <context:component-scan base-package="ua.yandex.pi/>
+
+      <bean name="pizzaService" class="ua.yandex.pizza.service.SimplePizzaService">
+           <property name="pizzaRepository" ref="pizzaRepository"/>
+       </bean>
+
+       <bean name="order" class="ua.yandex.pizza.domain.Order" scope="prototype"/>
+
+       -->
+    <context:component-scan base-package="ua.yandex.pizza.service"/>
+    <context:component-scan base-package="ua.yandex.pizza.domain"/>
+
+</beans>
